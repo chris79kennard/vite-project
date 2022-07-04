@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-
-        <p>Paints by Kaylee</p>
-       
-    
+   <>
+   <Router>
+    <Navbar>
+      <Routes>
+        <Route path='/' exact />
+      </Routes>
+    </Navbar>
+   </Router>
+   </>
   )
 }
 
-export default App
+export default App;

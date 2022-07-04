@@ -1,7 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom';
 
-const Navbar = props => {
+
+function Navbar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
   return (
     <>
     <nav className='navbar'>
@@ -20,6 +24,6 @@ const Navbar = props => {
   )
 }
 
-Navbar.propTypes = {}
 
-export default Navbar
+
+export default Navbar;
