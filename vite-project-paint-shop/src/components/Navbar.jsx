@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 function Navbar() {
   // Declaring Click and providing a value as default false.
   const [click, setClick] = useState(false);
+  // Declairing Close Mobile Menu
+  const closeMobileMenu = () => setClick(false);
 
   const handleClick = () => setClick(!click)
   // After user clicks the Hamburger icon to open the NavBar this is whats returned~
@@ -21,9 +23,21 @@ function Navbar() {
           <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
         </div>
         {/* after user clicks this removes dropdown menu */}
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}></ul>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}/>
+            Galactic
+          </li>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}/>
+            Fantasy
+          </li>
+          <li className='nav-item'>
+            <Link to='/' className='nav-links' onClick={closeMobileMenu}/>
+            Nature
+          </li>
+        </ul>
       </div>
-
     </nav>
     </>
   )
